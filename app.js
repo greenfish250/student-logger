@@ -5,7 +5,20 @@ const nameInput = studentForm["name"];
 const ageInput = studentForm["age"];
 const rollInput = studentForm["roll"];
 
-function createStudentElement(name, age, roll) {
+//array of student objects
+const students = [
+  {
+    name: "Ethan",
+    age: 18,
+    roll: 36,
+  },
+];
+
+//add student to array of students when user inputs info
+function addStudent(name, age, roll) {}
+
+//insert student info into the DOM
+function createStudentElement({ name, age, roll }) {
   const studentSection = document.createElement("div");
   const studentName = document.createElement("h2");
   const studentAge = document.createElement("p");
@@ -18,3 +31,6 @@ function createStudentElement(name, age, roll) {
   studentSection.append(studentName, studentAge, studentRoll);
   studentContainer.appendChild(studentSection);
 }
+
+//for every student in the array of student objects, insert their info into the DOM
+students.forEach(createStudentElement);
