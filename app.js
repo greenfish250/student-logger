@@ -8,6 +8,10 @@ const rollInput = studentForm["roll"];
 //array of student objects
 const students = JSON.parse(localStorage.getItem("students")) || [];
 
+//hide student div if there are no students present on the list
+studentContainer.style.visibility =
+  students.length === 0 ? "hidden" : "visible";
+
 //add student to array of students when user inputs info
 function addStudent(name, age, roll) {
   students.push({
