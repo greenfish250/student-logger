@@ -41,6 +41,10 @@ function createStudentElement({ name, age, roll }) {
   //insert elements into the DOM
   studentSection.append(studentName, studentAge, studentRoll);
   studentContainer.appendChild(studentSection);
+
+  //hide student div if there are no students present on the list
+  studentContainer.style.visibility =
+    students.length === 0 ? "hidden" : "visible";
 }
 
 //for every student in the array of student objects, insert their info into the DOM
