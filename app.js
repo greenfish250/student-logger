@@ -6,7 +6,7 @@ const ageInput = studentForm["age"];
 const rollInput = studentForm["roll"];
 
 //array of student objects
-const students = [];
+const students = JSON.parse(localStorage.getItem("students")) || [];
 
 //add student to array of students when user inputs info
 function addStudent(name, age, roll) {
@@ -15,6 +15,8 @@ function addStudent(name, age, roll) {
     age: age,
     roll: roll,
   });
+
+  localStorage.setItem("students", JSON.stringify(students));
 
   return { name, age, roll };
 }
